@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		5B11E36C21C07E83009E7411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11E36B21C07E83009E7411 /* AppDelegate.swift */; };
-		5B11E36E21C07E83009E7411 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11E36D21C07E83009E7411 /* ViewController.swift */; };
-		5B11E37121C07E83009E7411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B11E36F21C07E83009E7411 /* Main.storyboard */; };
 		5B11E37321C07E84009E7411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B11E37221C07E84009E7411 /* Assets.xcassets */; };
 		5B11E37621C07E84009E7411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B11E37421C07E84009E7411 /* LaunchScreen.storyboard */; };
 		5B11E38121C07E84009E7411 /* ChuckNorrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11E38021C07E84009E7411 /* ChuckNorrisTests.swift */; };
 		5B11E38C21C07E84009E7411 /* ChuckNorrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11E38B21C07E84009E7411 /* ChuckNorrisUITests.swift */; };
+		5B11E39F21C080DF009E7411 /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11E39E21C080DF009E7411 /* JokeViewController.swift */; };
+		5B11E3A321C080FF009E7411 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11E3A221C080FF009E7411 /* Joke.swift */; };
+		5BBFA15B21C0843900EC1120 /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA15A21C0843900EC1120 /* JokeViewModel.swift */; };
+		5BBFA15E21C0847D00EC1120 /* JokesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA15D21C0847D00EC1120 /* JokesRepository.swift */; };
+		5BBFA16021C0848600EC1120 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA15F21C0848600EC1120 /* BaseRepository.swift */; };
+		5BBFA16321C094A800EC1120 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA16221C094A800EC1120 /* UIViewControllerExtensions.swift */; };
+		5BBFA16521C0A76500EC1120 /* JokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA16421C0A76500EC1120 /* JokeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +41,6 @@
 /* Begin PBXFileReference section */
 		5B11E36821C07E83009E7411 /* ChuckNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B11E36B21C07E83009E7411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B11E36D21C07E83009E7411 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5B11E37021C07E83009E7411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B11E37221C07E84009E7411 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B11E37521C07E84009E7411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B11E37721C07E84009E7411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +50,13 @@
 		5B11E38721C07E84009E7411 /* ChuckNorrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuckNorrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B11E38B21C07E84009E7411 /* ChuckNorrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisUITests.swift; sourceTree = "<group>"; };
 		5B11E38D21C07E84009E7411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B11E39E21C080DF009E7411 /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
+		5B11E3A221C080FF009E7411 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		5BBFA15A21C0843900EC1120 /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
+		5BBFA15D21C0847D00EC1120 /* JokesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRepository.swift; sourceTree = "<group>"; };
+		5BBFA15F21C0848600EC1120 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		5BBFA16221C094A800EC1120 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		5BBFA16421C0A76500EC1120 /* JokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +107,11 @@
 		5B11E36A21C07E83009E7411 /* ChuckNorris */ = {
 			isa = PBXGroup;
 			children = (
-				5B11E36B21C07E83009E7411 /* AppDelegate.swift */,
-				5B11E36D21C07E83009E7411 /* ViewController.swift */,
-				5B11E36F21C07E83009E7411 /* Main.storyboard */,
-				5B11E37221C07E84009E7411 /* Assets.xcassets */,
-				5B11E37421C07E84009E7411 /* LaunchScreen.storyboard */,
-				5B11E37721C07E84009E7411 /* Info.plist */,
+				5B11E39921C07FFE009E7411 /* App */,
+				5BBFA16121C0949100EC1120 /* Extension */,
+				5BBFA15C21C0845C00EC1120 /* Repository */,
+				5B11E39D21C08049009E7411 /* Resource */,
+				5B11E39C21C08026009E7411 /* UseCase */,
 			);
 			path = ChuckNorris;
 			sourceTree = "<group>";
@@ -123,6 +132,68 @@
 				5B11E38D21C07E84009E7411 /* Info.plist */,
 			);
 			path = ChuckNorrisUITests;
+			sourceTree = "<group>";
+		};
+		5B11E39921C07FFE009E7411 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5B11E36B21C07E83009E7411 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5B11E39A21C08007009E7411 /* Joke */ = {
+			isa = PBXGroup;
+			children = (
+				5B11E3A221C080FF009E7411 /* Joke.swift */,
+				5BBFA16421C0A76500EC1120 /* JokeView.swift */,
+				5B11E39E21C080DF009E7411 /* JokeViewController.swift */,
+				5BBFA15A21C0843900EC1120 /* JokeViewModel.swift */,
+			);
+			path = Joke;
+			sourceTree = "<group>";
+		};
+		5B11E39B21C08016009E7411 /* JokesList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JokesList;
+			sourceTree = "<group>";
+		};
+		5B11E39C21C08026009E7411 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				5B11E39B21C08016009E7411 /* JokesList */,
+				5B11E39A21C08007009E7411 /* Joke */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		5B11E39D21C08049009E7411 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5B11E37221C07E84009E7411 /* Assets.xcassets */,
+				5B11E37421C07E84009E7411 /* LaunchScreen.storyboard */,
+				5B11E37721C07E84009E7411 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		5BBFA15C21C0845C00EC1120 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5BBFA15F21C0848600EC1120 /* BaseRepository.swift */,
+				5BBFA15D21C0847D00EC1120 /* JokesRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5BBFA16121C0949100EC1120 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5BBFA16221C094A800EC1120 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +302,6 @@
 			files = (
 				5B11E37621C07E84009E7411 /* LaunchScreen.storyboard in Resources */,
 				5B11E37321C07E84009E7411 /* Assets.xcassets in Resources */,
-				5B11E37121C07E83009E7411 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +326,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B11E36E21C07E83009E7411 /* ViewController.swift in Sources */,
+				5BBFA16021C0848600EC1120 /* BaseRepository.swift in Sources */,
 				5B11E36C21C07E83009E7411 /* AppDelegate.swift in Sources */,
+				5BBFA15E21C0847D00EC1120 /* JokesRepository.swift in Sources */,
+				5B11E39F21C080DF009E7411 /* JokeViewController.swift in Sources */,
+				5B11E3A321C080FF009E7411 /* Joke.swift in Sources */,
+				5BBFA16521C0A76500EC1120 /* JokeView.swift in Sources */,
+				5BBFA15B21C0843900EC1120 /* JokeViewModel.swift in Sources */,
+				5BBFA16321C094A800EC1120 /* UIViewControllerExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +369,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5B11E36F21C07E83009E7411 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B11E37021C07E83009E7411 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B11E37421C07E84009E7411 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -434,7 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WQ2FN46XND;
-				INFOPLIST_FILE = ChuckNorris/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChuckNorris/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WQ2FN46XND;
-				INFOPLIST_FILE = ChuckNorris/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChuckNorris/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
