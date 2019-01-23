@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol JokeViewDelegate: class {
+    func clickOnReloadButton()
+}
+
 class JokeView: UIView {
 
-    let jokeLabel: UILabel = {
+    // MARK: - Properties
+    private let jokeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Joke"
@@ -18,7 +23,7 @@ class JokeView: UIView {
         return label
     }()
 
-    let loadingView: UIView = {
+    private let loadingView: UIView = {
         let view = UIActivityIndicatorView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.startAnimating()
@@ -26,7 +31,19 @@ class JokeView: UIView {
         view.color = .black
         return view
     }()
+    
+    private let reloadButton: UIButton = {
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setTitle("Reload", for: .normal)
+        view.setTitleColor(.orange, for: .normal)
+        view.isUserInteractionEnabled = true
+        return view
+    }()
 
+    weak var delegate: JokeViewDelegate?
+    
+    // MARK: - Init
     init() {
         super.init(frame: .zero)
         buildView()
@@ -37,13 +54,19 @@ class JokeView: UIView {
         buildView()
     }
 
-    func buildView() {
+    // MARK: - Methods
+    private func buildView() {
         properties: do {
             backgroundColor = .white
         }
         
+        actions: do {
+            reloadButton.addTarget(self, action: #selector(clickOnReloadButton), for: .touchUpInside)
+        }
+        
         hierarchy: do {
             addSubview(jokeLabel)
+            addSubview(reloadButton)
         }
         
         constraints: do {
@@ -51,9 +74,19 @@ class JokeView: UIView {
                 jokeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
                 jokeLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
                 jokeLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16)])
+            
+            NSLayoutConstraint.activate([
+                reloadButton.topAnchor.constraint(equalTo: jokeLabel.bottomAnchor, constant: 16),
+                reloadButton.centerXAnchor.constraint(equalTo: centerXAnchor)])
         }
     }
+    
+    // MARK: - Actions
+    @objc private func clickOnReloadButton() {
+        delegate?.clickOnReloadButton()
+    }
 
+    // MARK: - Methods
     func showLoading() {
         if loadingView.superview == nil {
             addSubview(loadingView)
@@ -68,4 +101,11 @@ class JokeView: UIView {
         }
     }
     
+    func show(joke: Joke?) {
+        jokeLabel.text = joke?.value ?? "Loading..."
+    }
+    
+    func show(error: Error) {
+        jokeLabel.text = error.localizedDescription
+    }
 }

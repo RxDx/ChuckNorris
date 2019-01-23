@@ -16,6 +16,7 @@ class JokeViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.viewModel.delegate = self
+        self.jokeView.delegate = self
         self.view = jokeView
     }
 
@@ -25,14 +26,21 @@ class JokeViewController: UIViewController {
     }
 }
 
+// MARK: - JokeViewDelegate
+extension JokeViewController: JokeViewDelegate {
+    func clickOnReloadButton() {
+        viewModel.getJoke()
+    }
+}
+
 // MARK: - JokeViewModelDelegate
 extension JokeViewController: JokeViewModelDelegate {
-    func show(joke: Joke?, isLoading: Bool) {
-        jokeView.jokeLabel.text = isLoading ? "Loading..." : joke?.value
+    func show(joke: Joke?) {
+        jokeView.show(joke: joke)
     }
 
     func show(error: Error) {
-        jokeView.jokeLabel.text = error.localizedDescription
+        jokeView.show(error: error)
     }
 
     func loadingChanged(isLoading: Bool) {

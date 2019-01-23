@@ -7,7 +7,7 @@
 //
 
 protocol JokeViewModelDelegate: class {
-    func show(joke: Joke?, isLoading: Bool)
+    func show(joke: Joke?)
     func show(error: Error)
     func loadingChanged(isLoading: Bool)
 }
@@ -23,13 +23,17 @@ class JokeViewModel {
     }
 
     func getJoke() {
+        guard !isLoading else {
+            return
+        }
+        
         isLoading = true
-        delegate?.show(joke: nil, isLoading: isLoading)
+        delegate?.show(joke: nil)
         
         JokesRepository().getRandom { [weak self] (joke, error) in
             self?.isLoading = false
             
-            self?.delegate?.show(joke: joke, isLoading: self?.isLoading ?? false)
+            self?.delegate?.show(joke: joke)
 
             if let error = error {
                 self?.delegate?.show(error: error)
