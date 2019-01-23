@@ -19,6 +19,7 @@
 		5BBFA16021C0848600EC1120 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA15F21C0848600EC1120 /* BaseRepository.swift */; };
 		5BBFA16321C094A800EC1120 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA16221C094A800EC1120 /* UIViewControllerExtensions.swift */; };
 		5BBFA16521C0A76500EC1120 /* JokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA16421C0A76500EC1120 /* JokeView.swift */; };
+		5BBFAECF21F7E4A90081DFCE /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFAECE21F7E4A90081DFCE /* UIImageExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		5BBFA15F21C0848600EC1120 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		5BBFA16221C094A800EC1120 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		5BBFA16421C0A76500EC1120 /* JokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeView.swift; sourceTree = "<group>"; };
+		5BBFAECE21F7E4A90081DFCE /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				5BBFA16221C094A800EC1120 /* UIViewControllerExtensions.swift */,
+				5BBFAECE21F7E4A90081DFCE /* UIImageExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBFAECF21F7E4A90081DFCE /* UIImageExtensions.swift in Sources */,
 				5BBFA16021C0848600EC1120 /* BaseRepository.swift in Sources */,
 				5B11E36C21C07E83009E7411 /* AppDelegate.swift in Sources */,
 				5BBFA15E21C0847D00EC1120 /* JokesRepository.swift in Sources */,

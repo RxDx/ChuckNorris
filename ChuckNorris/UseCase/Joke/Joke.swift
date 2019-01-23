@@ -12,10 +12,11 @@ struct Joke: Codable {
     var id: String?
     var url: String?
     var value: String?
-    var category: String?
+    var categories: [String]?
 
     enum CodingKeys: String, CodingKey {
         case iconUrl = "icon_url"
-        case id, url, value, category
+        case categories = "category"
+        case id, url, value
     }
 }

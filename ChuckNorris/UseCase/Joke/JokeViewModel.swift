@@ -6,17 +6,17 @@
 //  Copyright © 2018 Rodrigo Dumont. All rights reserved.
 //
 
-protocol JokeViewModelDelegate {
-    func show(joke: Joke?)
-    func show(error: Error?)
+protocol JokeViewModelDelegate: class {
+    func show(joke: Joke?, isLoading: Bool)
+    func show(error: Error)
     func loadingChanged(isLoading: Bool)
 }
 
 class JokeViewModel {
 
-    var delegate: JokeViewModelDelegate?
+    weak var delegate: JokeViewModelDelegate?
 
-    var isLoading = false {
+    private var isLoading = false {
         didSet {
             delegate?.loadingChanged(isLoading: isLoading)
         }
@@ -24,10 +24,16 @@ class JokeViewModel {
 
     func getJoke() {
         isLoading = true
+        delegate?.show(joke: nil, isLoading: isLoading)
+        
         JokesRepository().getRandom { [weak self] (joke, error) in
             self?.isLoading = false
-            self?.delegate?.show(error: error)
-            self?.delegate?.show(joke: joke)
+            
+            self?.delegate?.show(joke: joke, isLoading: self?.isLoading ?? false)
+
+            if let error = error {
+                self?.delegate?.show(error: error)
+            }
         }
     }
 }

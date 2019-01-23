@@ -38,12 +38,20 @@ class JokeView: UIView {
     }
 
     func buildView() {
-        backgroundColor = .white
-
-        addSubview(jokeLabel)
-        NSLayoutConstraint.activate([
-            jokeLabel.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            jokeLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16)])
+        properties: do {
+            backgroundColor = .white
+        }
+        
+        hierarchy: do {
+            addSubview(jokeLabel)
+        }
+        
+        constraints: do {
+            NSLayoutConstraint.activate([
+                jokeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                jokeLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+                jokeLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16)])
+        }
     }
 
     func showLoading() {

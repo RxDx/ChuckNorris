@@ -27,12 +27,12 @@ class JokeViewController: UIViewController {
 
 // MARK: - JokeViewModelDelegate
 extension JokeViewController: JokeViewModelDelegate {
-    func show(joke: Joke?) {
-        jokeView.jokeLabel.text = joke?.value
+    func show(joke: Joke?, isLoading: Bool) {
+        jokeView.jokeLabel.text = isLoading ? "Loading..." : joke?.value
     }
 
-    func show(error: Error?) {
-        jokeView.jokeLabel.text = error?.localizedDescription
+    func show(error: Error) {
+        jokeView.jokeLabel.text = error.localizedDescription
     }
 
     func loadingChanged(isLoading: Bool) {
