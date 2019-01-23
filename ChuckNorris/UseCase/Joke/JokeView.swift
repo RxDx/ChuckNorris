@@ -10,17 +10,26 @@ import UIKit
 
 protocol JokeViewDelegate: class {
     func clickOnReloadButton()
+    func getCategory() -> String
 }
 
 class JokeView: UIView {
 
     // MARK: - Properties
+    private let titleLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.font = .systemFont(ofSize: 20, weight: .semibold)
+        view.numberOfLines = 0
+        return view
+    }()
+    
     private let jokeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Joke"
-        label.numberOfLines = 0
-        return label
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Joke"
+        view.numberOfLines = 0
+        return view
     }()
 
     private let loadingView: UIView = {
@@ -53,8 +62,13 @@ class JokeView: UIView {
         super.init(coder: aDecoder)
         buildView()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        buildView()
+    }
 
-    // MARK: - Methods
+    // MARK: - Private Methods
     private func buildView() {
         properties: do {
             backgroundColor = .white
@@ -65,20 +79,34 @@ class JokeView: UIView {
         }
         
         hierarchy: do {
+            addSubview(titleLabel)
             addSubview(jokeLabel)
             addSubview(reloadButton)
         }
         
         constraints: do {
             NSLayoutConstraint.activate([
-                jokeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-                jokeLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-                jokeLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16)])
-            
+                titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+                titleLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40)])
+
             NSLayoutConstraint.activate([
-                reloadButton.topAnchor.constraint(equalTo: jokeLabel.bottomAnchor, constant: 16),
+                jokeLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+                jokeLabel.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
+                jokeLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32)])
+
+            NSLayoutConstraint.activate([
+                reloadButton.topAnchor.constraint(equalTo: jokeLabel.bottomAnchor, constant: 40),
                 reloadButton.centerXAnchor.constraint(equalTo: centerXAnchor)])
         }
+        
+        setup: do {
+            setupTitle()
+        }
+    }
+    
+    private func setupTitle() {
+        titleLabel.text = delegate?.getCategory()
     }
     
     // MARK: - Actions
@@ -86,7 +114,7 @@ class JokeView: UIView {
         delegate?.clickOnReloadButton()
     }
 
-    // MARK: - Methods
+    // MARK: - Public Methods
     func showLoading() {
         if loadingView.superview == nil {
             addSubview(loadingView)

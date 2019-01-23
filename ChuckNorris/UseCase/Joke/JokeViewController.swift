@@ -31,6 +31,10 @@ extension JokeViewController: JokeViewDelegate {
     func clickOnReloadButton() {
         viewModel.getJoke()
     }
+    
+    func getCategory() -> String {
+        return viewModel.getCategory()
+    }
 }
 
 // MARK: - JokeViewModelDelegate

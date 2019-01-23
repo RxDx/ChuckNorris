@@ -40,4 +40,8 @@ class JokeViewModel {
             }
         }
     }
+    
+    func getCategory() -> String {
+        return "Random Joke"
+    }
 }
